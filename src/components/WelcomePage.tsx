@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { siteContent } from '../content/site';
-import { InfoSection } from './InfoSection';
 
 export const WelcomePage: React.FC = () => {
   const [language, setLanguage] = useState<'en' | 'fr'>('en');
@@ -294,11 +293,6 @@ export const WelcomePage: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
-      
-      {/* Compact Contact Information */}
-      <div className="py-8 px-4">
-        <InfoSection />
       </div>
     </div>
   );
