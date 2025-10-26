@@ -5,117 +5,178 @@ import { siteContent } from '../content/site';
 export const InfoSection: React.FC = () => {
   return (
     <motion.section
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 text-white py-20"
+      className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-4 sm:py-6"
     >
-      <div className="max-w-5xl mx-auto px-4">
+      <div className="w-full px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
-          className="bg-white bg-opacity-5 backdrop-blur-lg rounded-2xl p-12 border border-white border-opacity-10"
+          className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-4 sm:p-6 border border-white border-opacity-20"
         >
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-light mb-4 text-white tracking-wide">
+          <div className="text-center mb-4">
+            <h2 className="text-lg sm:text-xl font-light mb-2 text-white tracking-wide">
               Contact Information
             </h2>
-            <div className="w-20 h-px bg-gradient-to-r from-blue-400 to-indigo-400 mx-auto mb-6"></div>
-            <p className="text-gray-300 text-lg font-light">
+            <div className="w-8 h-0.5 bg-gradient-to-r from-white to-blue-200 mx-auto mb-3 rounded-full"></div>
+            <p className="text-blue-100 text-xs font-light">
               Academic credentials and contact details
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <motion.div 
-              whileHover={{ scale: 1.02 }}
-              className="bg-white bg-opacity-5 rounded-xl p-6 border border-white border-opacity-10"
-            >
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white text-xl">📧</span>
+          {/* Responsive layout: Info on left, Centered Photo */}
+          <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 items-center">
+            {/* Left side - Contact Information */}
+            <div className="space-y-2">
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.01 }}
+                className="bg-white bg-opacity-10 rounded-lg p-2 border border-white border-opacity-20"
+              >
+                <div className="flex items-center space-x-2">
+                  <div className="w-6 h-6 bg-white rounded flex items-center justify-center shadow-sm">
+                    <span className="text-blue-900 text-xs">📧</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xs font-semibold text-white">Email</h3>
+                    <p className="text-blue-200 text-xs font-light">{siteContent.personalInfo.email}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-white">Email</h3>
-                  <p className="text-blue-300 text-sm font-light">{siteContent.personalInfo.email}</p>
+              </motion.div>
+              
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.15 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.01 }}
+                className="bg-white bg-opacity-10 rounded-lg p-2 border border-white border-opacity-20"
+              >
+                <div className="flex items-center space-x-2">
+                  <div className="w-6 h-6 bg-white rounded flex items-center justify-center shadow-sm">
+                    <span className="text-blue-900 text-xs">🎓</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xs font-semibold text-white">Student ID</h3>
+                    <p className="text-blue-200 text-xs font-light">{siteContent.personalInfo.studentId}</p>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+              
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.01 }}
+                className="bg-white bg-opacity-10 rounded-lg p-2 border border-white border-opacity-20"
+              >
+                <div className="flex items-center space-x-2">
+                  <div className="w-6 h-6 bg-white rounded flex items-center justify-center shadow-sm">
+                    <span className="text-blue-900 text-xs">🏫</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xs font-semibold text-white">Institution</h3>
+                    <p className="text-blue-200 text-xs font-light">{siteContent.personalInfo.institution}</p>
+                  </div>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.25 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.01 }}
+                className="bg-white bg-opacity-10 rounded-lg p-2 border border-white border-opacity-20"
+              >
+                <div className="flex items-center space-x-2">
+                  <div className="w-6 h-6 bg-white rounded flex items-center justify-center shadow-sm">
+                    <span className="text-blue-900 text-xs">📚</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xs font-semibold text-white">Program</h3>
+                    <p className="text-blue-200 text-xs font-light">{siteContent.personalInfo.program}</p>
+                  </div>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.01 }}
+                className="bg-white bg-opacity-10 rounded-lg p-2 border border-white border-opacity-20"
+              >
+                <div className="flex items-center space-x-2">
+                  <div className="w-6 h-6 bg-white rounded flex items-center justify-center shadow-sm">
+                    <span className="text-blue-900 text-xs">👨‍🏫</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xs font-semibold text-white">Academic Advisor</h3>
+                    <p className="text-blue-200 text-xs font-light">{siteContent.personalInfo.academicAdvisor}</p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
             
-            <motion.div 
-              whileHover={{ scale: 1.02 }}
-              className="bg-white bg-opacity-5 rounded-xl p-6 border border-white border-opacity-10"
+            {/* Right side - Centered Profile Photo */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="flex justify-center"
             >
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="w-12 h-12 bg-indigo-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white text-xl">🎓</span>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-white">Student ID</h3>
-                  <p className="text-indigo-300 text-sm font-light">{siteContent.personalInfo.studentNumber}</p>
-                </div>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              whileHover={{ scale: 1.02 }}
-              className="bg-white bg-opacity-5 rounded-xl p-6 border border-white border-opacity-10"
-            >
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white text-xl">🏫</span>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-white">Institution</h3>
-                  <p className="text-green-300 text-sm font-light">{siteContent.personalInfo.university}</p>
-                </div>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              whileHover={{ scale: 1.02 }}
-              className="bg-white bg-opacity-5 rounded-xl p-6 border border-white border-opacity-10"
-            >
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white text-xl">📚</span>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-white">Program</h3>
-                  <p className="text-purple-300 text-sm font-light">{siteContent.personalInfo.course}</p>
-                </div>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              whileHover={{ scale: 1.02 }}
-              className="bg-white bg-opacity-5 rounded-xl p-6 border border-white border-opacity-10 md:col-span-2 lg:col-span-1"
-            >
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white text-xl">👨‍🏫</span>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-white">Academic Advisor</h3>
-                  <p className="text-orange-300 text-sm font-light">{siteContent.personalInfo.advisor}</p>
-                </div>
+              <div className="relative">
+                <motion.img
+                  src="/profile.jpg"
+                  alt="Profile"
+                  className="w-32 h-32 sm:w-36 sm:h-36 lg:w-40 lg:h-40 rounded-full border-3 border-white/40 shadow-xl object-cover"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                  onError={(e) => {
+                    e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzg0IiBoZWlnaHQ9IjM4NCIgdmlld0JveD0iMCAwIDM4NCAzODQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjE5MiIgY3k9IjE5MiIgcj0iMTkyIiBmaWxsPSIjRjNGNEY2Ii8+CjxjaXJjbGUgY3g9IjE5MiIgY3k9IjE0NCIgcj0iNzIiIGZpbGw9IiM5Q0EzQUYiLz4KPHBhdGggZD0iOTYgMjg4Qzk2IDI4OCAyODggMjg4IDI4OCAyODhWMzIwSDI4OFYzODRIOTZWMzIwSDk2VjI4OFoiIGZpbGw9IiM5Q0EzQUYiLz4KPC9zdmc+';
+                  }}
+                />
+                {/* Status indicator */}
+                <motion.div 
+                  className="absolute -bottom-2 -right-2 w-6 h-6 bg-white rounded-full border-2 border-blue-900 flex items-center justify-center shadow-sm"
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <span className="text-blue-900 text-xs font-bold">✓</span>
+                </motion.div>
               </div>
             </motion.div>
           </div>
           
-          <div className="mt-12 text-center">
-            <div className="bg-white bg-opacity-5 rounded-xl p-6 border border-white border-opacity-10">
-              <p className="text-gray-300 text-lg font-light mb-2">
+          {/* Bottom message */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mt-4 text-center"
+          >
+            <div className="bg-white bg-opacity-10 rounded-lg p-3 border border-white border-opacity-20">
+              <p className="text-blue-100 text-xs font-light mb-1">
                 Available for academic collaboration and research opportunities
               </p>
-              <p className="text-gray-400 text-sm">
+              <p className="text-blue-200 text-xs">
                 Specializing in cross-cultural communication and multilingual content adaptation
               </p>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </motion.section>

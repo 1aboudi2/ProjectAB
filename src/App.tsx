@@ -1,15 +1,20 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { Home } from './pages/Home';
-import { Project } from './pages/Project';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { SimpleNav } from './components/SimpleNav';
+import { WelcomePage } from './components/WelcomePage';
+import { SecondPage } from './components/SecondPage';
+import { InfoSection } from './components/InfoSection';
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/page2" element={<Project />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      <div className="min-h-screen bg-white">
+        <SimpleNav />
+        <Routes>
+          <Route path="/" element={<WelcomePage />} />
+          <Route path="/page2" element={<SecondPage />} />
+        </Routes>
+      </div>
     </Router>
   );
 }
