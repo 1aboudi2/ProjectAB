@@ -1,8 +1,8 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { SimpleNav } from './components/SimpleNav';
 import { WelcomePage } from './components/WelcomePage';
-import { SecondPage } from './components/SecondPage';
+import { ResearchPage } from './components/ResearchPage';
+import { ContactPage } from './components/ContactPage';
 
 function App() {
   return (
@@ -11,7 +11,9 @@ function App() {
         <SimpleNav />
         <Routes>
           <Route path="/" element={<WelcomePage />} />
-          <Route path="/page2" element={<SecondPage />} />
+          <Route path="/welcome" element={<WelcomePage />} />
+          <Route path="/research" element={<ResearchPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </div>
     </Router>
