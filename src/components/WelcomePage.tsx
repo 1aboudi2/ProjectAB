@@ -5,7 +5,7 @@ import { siteContent } from '../content/site';
 export const WelcomePage: React.FC = () => {
   return (
     <div className="min-h-screen">
-      {/* International Translation Welcome Section */}
+      {/* Modern Engaging Welcome Section */}
       <section 
         className="h-screen flex items-center justify-center relative overflow-hidden"
         style={{
@@ -15,36 +15,46 @@ export const WelcomePage: React.FC = () => {
           backgroundRepeat: 'no-repeat'
         }}
       >
-        {/* Translation-themed gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-blue-900/75 to-indigo-900/85"></div>
+        {/* Dynamic gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/70 to-indigo-900/80"></div>
         
-        {/* Language/Translation pattern overlay */}
+        {/* Animated geometric patterns */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(59, 130, 246, 0.1) 10px, rgba(59, 130, 246, 0.1) 20px),
-                            repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(147, 51, 234, 0.1) 10px, rgba(147, 51, 234, 0.1) 20px)`
-          }}></div>
+          <motion.div
+            animate={{ 
+              backgroundPosition: ['0% 0%', '100% 100%'],
+            }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 80%, rgba(147, 51, 234, 0.3) 0%, transparent 50%),
+                              radial-gradient(circle at 40% 60%, rgba(99, 102, 241, 0.3) 0%, transparent 50%)`,
+              backgroundSize: '400px 400px'
+            }}
+          ></motion.div>
         </div>
         
-        {/* Floating language symbols */}
+        {/* Floating translation elements */}
         <div className="absolute inset-0">
-          {['🌍', '📚', '✍️', '🔤', '🗣️', '📖'].map((symbol, i) => (
+          {['🌐', '📚', '✍️', '🔤'].map((symbol, i) => (
             <motion.div
               key={i}
-              className="absolute text-2xl opacity-30"
+              className="absolute text-3xl opacity-40"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
+                left: `${20 + i * 20}%`,
+                top: `${30 + i * 15}%`,
               }}
               animate={{
-                y: [0, -30, 0],
-                rotate: [0, 10, -10, 0],
-                opacity: [0.3, 0.6, 0.3],
+                y: [0, -40, 0],
+                rotate: [0, 15, -15, 0],
+                opacity: [0.4, 0.8, 0.4],
+                scale: [1, 1.1, 1],
               }}
               transition={{
-                duration: 4 + Math.random() * 2,
+                duration: 6 + i * 2,
                 repeat: Infinity,
-                delay: Math.random() * 3,
+                delay: i * 1.5,
               }}
             >
               {symbol}
@@ -54,128 +64,157 @@ export const WelcomePage: React.FC = () => {
         
         {/* Professional content layout */}
         <div className="relative z-10 text-center text-white max-w-6xl mx-auto px-4">
-          {/* Profile Picture with translation theme */}
+          {/* Modern Profile Picture */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="mb-8"
+            className="mb-10"
           >
             <div className="relative inline-block">
-              <img
+              <motion.img
                 src={siteContent.profileImage}
                 alt="Profile"
-                className="w-32 h-32 md:w-36 md:h-36 rounded-full border-4 border-white shadow-2xl object-cover"
+                className="w-36 h-36 md:w-40 md:h-40 rounded-full border-4 border-white/30 shadow-2xl object-cover"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
                 onError={(e) => {
-                  e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0IiBoZWlnaHQ9IjE0NCIgdmlld0JveD0iMCAwIDE0NCAxNDQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjcyIiBjeT0iNzIiIHI9IjcyIiBmaWxsPSIjRjNGNEY2Ii8+CjxjaXJjbGUgY3g9IjcyIiBjeT0iNTQiIHI9IjI3IiBmaWxsPSIjOUNBM0FGIi8+CjxwYXRoIGQ9Ik0zNiAxMDhDMzYgMTA4IDEwOCAxMDggMTA4IDEwOFYxMjZIMTA4VjE0NEgzNlYxMjZIMzZWMTA4WiIgZmlsbD0iIzlDQTNBRiIvPgo8L3N2Zz4=';
+                  e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYwIiBoZWlnaHQ9IjE2MCIgdmlld0JveD0iMCAwIDE2MCAxNjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjgwIiBjeT0iODAiIHI9IjgwIiBmaWxsPSIjRjNGNEY2Ii8+CjxjaXJjbGUgY3g9IjgwIiBjeT0iNjAiIHI9IjMwIiBmaWxsPSIjOUNBM0FGIi8+CjxwYXRoIGQ9Ik00MCAxMjBDNDAgMTIwIDEyMCAxMjAgMTIwIDEyMFYxNDBIMTIwVjE2MEgwVjE0MEgwVjEyMFoiIGZpbGw9IiM5Q0EzQUYiLz4KPC9zdmc+';
                 }}
               />
-              {/* Translation indicator */}
-              <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-4 border-white flex items-center justify-center">
-                <span className="text-white text-xs">🌍</span>
-              </div>
+              {/* Modern status indicator */}
+              <motion.div 
+                className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-r from-green-400 to-blue-500 rounded-full border-4 border-white flex items-center justify-center"
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                <span className="text-white text-xs">✓</span>
+              </motion.div>
             </div>
           </motion.div>
           
-          {/* Welcome text with translation theme */}
+          {/* Dynamic title and subtitle */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="mb-6"
+            className="mb-8"
           >
-            <h1 className="text-4xl md:text-6xl font-light text-white mb-4 tracking-wide">
+            <motion.h1 
+              className="text-5xl md:text-7xl font-bold text-white mb-6"
+              style={{
+                background: 'linear-gradient(135deg, #60a5fa, #a78bfa, #c084fc)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+              animate={{
+                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+              }}
+              transition={{ duration: 3, repeat: Infinity }}
+            >
               {siteContent.welcomeTitle}
-            </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 mx-auto mb-6"></div>
-            <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-light">
+            </motion.h1>
+            <motion.div 
+              className="w-32 h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 mx-auto mb-8 rounded-full"
+              initial={{ width: 0 }}
+              animate={{ width: '8rem' }}
+              transition={{ duration: 1, delay: 1 }}
+            ></motion.div>
+            <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed font-medium">
               {siteContent.welcomeSubtitle}
             </p>
           </motion.div>
           
-          {/* Translation credentials */}
+          {/* Interactive credentials grid */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.9 }}
-            className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto"
+            className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10"
           >
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-              <h3 className="text-sm font-semibold text-blue-300 mb-2">UNIVERSITY</h3>
-              <p className="text-white text-sm">{siteContent.personalInfo.university}</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-              <h3 className="text-sm font-semibold text-purple-300 mb-2">PROGRAM</h3>
-              <p className="text-white text-sm">{siteContent.personalInfo.course}</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-              <h3 className="text-sm font-semibold text-indigo-300 mb-2">LANGUAGE PAIRS</h3>
-              <p className="text-white text-sm">{siteContent.personalInfo.translationPairs}</p>
-            </div>
+            {[
+              { label: 'Institution', value: siteContent.personalInfo.university, color: 'from-blue-500 to-blue-600' },
+              { label: 'Program', value: siteContent.personalInfo.course, color: 'from-purple-500 to-purple-600' },
+              { label: 'Language Pairs', value: siteContent.personalInfo.translationPairs, color: 'from-indigo-500 to-indigo-600' }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.1 + index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className={`bg-gradient-to-br ${item.color} rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300`}
+              >
+                <h3 className="text-sm font-semibold text-white/80 mb-2 tracking-wider uppercase">{item.label}</h3>
+                <p className="text-white text-base font-medium">{item.value}</p>
+              </motion.div>
+            ))}
           </motion.div>
           
-          {/* Language proficiency indicators */}
+          {/* Animated language indicators */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.2 }}
-            className="mt-8"
+            transition={{ duration: 1, delay: 1.4 }}
+            className="mb-12"
           >
-            <div className="flex flex-wrap justify-center gap-3">
+            <div className="flex flex-wrap justify-center gap-4">
               {siteContent.personalInfo.languages.map((language, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 1.4 + index * 0.1 }}
-                  className="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30"
+                  transition={{ duration: 0.5, delay: 1.6 + index * 0.1 }}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 border border-white/30 hover:bg-white/30 transition-all duration-300"
                 >
-                  <span className="text-white text-sm font-medium">{language}</span>
+                  <span className="text-white text-sm font-semibold tracking-wide">{language}</span>
                 </motion.div>
               ))}
             </div>
           </motion.div>
           
-          {/* Professional scroll indicator */}
+          {/* Modern scroll indicator */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.8 }}
-            className="mt-12"
+            transition={{ duration: 1, delay: 2 }}
+            className="flex flex-col items-center space-y-4"
           >
-            <div className="flex flex-col items-center space-y-2">
-              <span className="text-gray-300 text-sm font-light tracking-wider">EXPLORE TRANSLATION WORK</span>
+            <span className="text-gray-300 text-sm font-medium tracking-wider uppercase">Explore Work</span>
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-8 h-12 border-2 border-white/60 rounded-full flex justify-center p-2"
+            >
               <motion.div
-                animate={{ y: [0, 8, 0] }}
+                animate={{ y: [0, 16, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center"
-              >
-                <motion.div
-                  animate={{ y: [0, 12, 0] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="w-1 h-3 bg-gray-300 rounded-full mt-2"
-                ></motion.div>
-              </motion.div>
-            </div>
+                className="w-1 h-3 bg-white rounded-full"
+              ></motion.div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Translation Articles Section */}
-      <div className="bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-800 py-20">
-        <div className="max-w-5xl mx-auto px-4">
+      {/* Modern Articles Section */}
+      <div className="bg-gradient-to-b from-gray-50 to-white dark:from-slate-900 dark:to-slate-800 py-24">
+        <div className="max-w-6xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl md:text-4xl font-light text-gray-900 dark:text-white mb-4">
-              Translation Research
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                Translation Research
+              </span>
             </h2>
-            <div className="w-16 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 mx-auto mb-6"></div>
-            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 mx-auto mb-8 rounded-full"></div>
+            <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg font-medium leading-relaxed">
               Bridging languages and cultures through professional translation
             </p>
           </motion.div>
@@ -187,13 +226,16 @@ export const WelcomePage: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.15 }}
               viewport={{ once: true }}
-              className="mb-12 group"
+              className="mb-16 group"
             >
-              <div className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border-l-4 border-slate-200 dark:border-slate-700 group-hover:border-blue-500">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm font-semibold">{article.id}</span>
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="bg-white dark:bg-slate-800 rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200 dark:border-slate-700 group-hover:border-blue-300 dark:group-hover:border-blue-500"
+              >
+                <div className="flex items-start justify-between mb-6">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center shadow-lg">
+                      <span className="text-white text-sm font-bold">{article.id}</span>
                     </div>
                     <div className="flex flex-col">
                       <span className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
@@ -204,18 +246,18 @@ export const WelcomePage: React.FC = () => {
                       </span>
                     </div>
                   </div>
-                  <span className="text-sm text-gray-500 dark:text-gray-400 font-light">
+                  <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">
                     {article.date}
                   </span>
                 </div>
                 
-                <h3 className="text-2xl md:text-3xl font-light text-gray-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-tight">
                   {article.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed font-light">
+                <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed font-medium">
                   {article.content}
                 </p>
-              </div>
+              </motion.div>
             </motion.article>
           ))}
         </div>
