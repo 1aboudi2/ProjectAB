@@ -1,9 +1,9 @@
 // TODO: Replace with your info
 export const siteContent = {
   // Site metadata
-  siteName: "My Articles",
+  siteName: "Translation Portfolio",
   welcomeTitle: "Welcome",
-  welcomeSubtitle: "Discover my thoughts and insights",
+  welcomeSubtitle: "Bridging cultures through language and translation",
   
   // Background image
   backgroundImage: "/background.jpg", // TODO: Replace with your background photo
@@ -16,28 +16,38 @@ export const siteContent = {
     email: "your.email@university.edu", // TODO: Replace with your email
     studentNumber: "12345678", // TODO: Replace with your student number
     university: "Your University Name", // TODO: Replace with your university
-    course: "Your Course Name" // TODO: Replace with your course
+    course: "Master's in International Translation", // TODO: Replace with your course
+    specialization: "Multilingual Communication", // TODO: Replace with your specialization
+    advisor: "Dr. [Advisor Name]", // TODO: Replace with your advisor
+    languages: ["English", "French", "Spanish", "Arabic"], // TODO: Replace with your languages
+    translationPairs: "EN↔FR, EN↔ES, EN↔AR" // TODO: Replace with your language pairs
   },
   
-  // Articles/Paragraphs
+  // Translation Articles/Projects
   articles: [
     {
       id: 1,
-      title: "My First Article",
-      content: "This is where you can put your first article content. It will appear as you scroll down the page. You can write about anything you want - your thoughts, experiences, or insights. The text will fade in smoothly as you scroll.",
-      date: "2024-01-15"
+      title: "Cross-Cultural Translation Challenges",
+      content: "Exploring the complexities of translating cultural concepts and idioms across different languages. This research examines how cultural context affects meaning transfer and the strategies translators employ to maintain authenticity while ensuring comprehension in target languages.",
+      date: "2024-01-15",
+      category: "Cultural Translation",
+      languages: "EN → FR"
     },
     {
       id: 2,
-      title: "Another Article",
-      content: "Here's another article that will reveal as you continue scrolling. You can add as many articles as you want. Each one will have its own title and content. The animations make the reading experience smooth and engaging.",
-      date: "2024-01-20"
+      title: "Technical Translation Methodology",
+      content: "Analyzing specialized translation techniques for technical documents, legal texts, and scientific literature. This work focuses on maintaining precision and accuracy while adapting content for different linguistic and cultural contexts.",
+      date: "2024-01-20",
+      category: "Technical Translation",
+      languages: "EN → ES"
     },
     {
       id: 3,
-      title: "More Thoughts",
-      content: "Keep adding your articles here. The scroll-reveal effect makes each paragraph appear naturally as you read. You can write about your experiences, share knowledge, or express your thoughts on various topics.",
-      date: "2024-01-25"
+      title: "Machine Translation vs Human Expertise",
+      content: "Investigating the role of artificial intelligence in modern translation practices and the irreplaceable value of human translators in nuanced, context-sensitive translation work. This research explores hybrid approaches combining technology with human insight.",
+      date: "2024-01-25",
+      category: "Translation Technology",
+      languages: "EN → AR"
     }
   ],
   
@@ -45,15 +55,19 @@ export const siteContent = {
   secondPageArticles: [
     {
       id: 1,
-      title: "Second Page Article",
-      content: "This is content for the second page. You can organize your articles across different pages. Each page can have its own background image and set of articles.",
-      date: "2024-02-01"
+      title: "Literary Translation Techniques",
+      content: "Examining the art of literary translation, focusing on preserving authorial voice, cultural nuances, and literary devices across languages. This work explores the balance between fidelity to the source text and adaptation for target audiences.",
+      date: "2024-02-01",
+      category: "Literary Translation",
+      languages: "FR → EN"
     },
     {
       id: 2,
-      title: "Another Second Page Article",
-      content: "More content for the second page. You can have different themes or topics on each page. The navigation is simple - just click the tab to switch between pages.",
-      date: "2024-02-05"
+      title: "International Communication Strategies",
+      content: "Developing effective communication strategies for multinational organizations, focusing on translation management, quality assurance, and cultural adaptation in global business contexts.",
+      date: "2024-02-05",
+      category: "Business Translation",
+      languages: "ES → EN"
     }
   ]
 };
