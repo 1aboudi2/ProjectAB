@@ -1,10 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { siteContent } from '../content/site';
 
 export const SecondPage: React.FC = () => {
+  const [language, setLanguage] = useState<'en' | 'fr'>('en');
+
+  const translations = {
+    en: {
+      welcomeTitle: "Research Portfolio",
+      welcomeSubtitle: "Advanced translation studies and multilingual research",
+      exploreProjects: "Explore Projects"
+    },
+    fr: {
+      welcomeTitle: "Portfolio de Recherche",
+      welcomeSubtitle: "Études avancées de traduction et recherche multilingue",
+      exploreProjects: "Explorer les Projets"
+    }
+  };
+
+  const currentText = translations[language];
+
   return (
     <div className="min-h-screen">
+      {/* Language Toggle */}
+      <div className="fixed top-6 left-6 z-50">
+        <div className="flex bg-white/10 backdrop-blur-sm rounded-full p-1 border border-white/20">
+          <button
+            onClick={() => setLanguage('en')}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              language === 'en' 
+                ? 'bg-white text-gray-900 shadow-lg' 
+                : 'text-white hover:text-gray-200'
+            }`}
+          >
+            EN
+          </button>
+          <button
+            onClick={() => setLanguage('fr')}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              language === 'fr' 
+                ? 'bg-white text-gray-900 shadow-lg' 
+                : 'text-white hover:text-gray-200'
+            }`}
+          >
+            FR
+          </button>
+        </div>
+      </div>
+
       {/* Modern Research Welcome Section */}
       <section 
         className="h-screen flex items-center justify-center relative overflow-hidden"
@@ -83,7 +126,7 @@ export const SecondPage: React.FC = () => {
               }}
               transition={{ duration: 3, repeat: Infinity }}
             >
-              Research Portfolio
+              {currentText.welcomeTitle}
             </motion.h1>
             <motion.div 
               className="w-32 h-1 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 mx-auto mb-8 rounded-full"
@@ -92,7 +135,7 @@ export const SecondPage: React.FC = () => {
               transition={{ duration: 1, delay: 0.5 }}
             ></motion.div>
             <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed font-medium">
-              Advanced translation studies and multilingual research
+              {currentText.welcomeSubtitle}
             </p>
           </motion.div>
           
@@ -103,7 +146,7 @@ export const SecondPage: React.FC = () => {
             transition={{ duration: 1, delay: 1 }}
             className="flex flex-col items-center space-y-4"
           >
-            <span className="text-gray-300 text-sm font-medium tracking-wider uppercase">Explore Projects</span>
+            <span className="text-gray-300 text-sm font-medium tracking-wider uppercase">{currentText.exploreProjects}</span>
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 2, repeat: Infinity }}

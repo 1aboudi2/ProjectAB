@@ -1,10 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { siteContent } from '../content/site';
 
 export const WelcomePage: React.FC = () => {
+  const [language, setLanguage] = useState<'en' | 'fr'>('en');
+
+  const translations = {
+    en: {
+      welcomeTitle: "Welcome",
+      welcomeSubtitle: "Bridging cultures through language and translation",
+      institution: "Institution",
+      program: "Program",
+      exploreWork: "Explore Work"
+    },
+    fr: {
+      welcomeTitle: "Bienvenue",
+      welcomeSubtitle: "Relier les cultures par la langue et la traduction",
+      institution: "Institution",
+      program: "Programme",
+      exploreWork: "Explorer le Travail"
+    }
+  };
+
+  const currentText = translations[language];
+
   return (
     <div className="min-h-screen">
+      {/* Language Toggle */}
+      <div className="fixed top-6 left-6 z-50">
+        <div className="flex bg-white/10 backdrop-blur-sm rounded-full p-1 border border-white/20">
+          <button
+            onClick={() => setLanguage('en')}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              language === 'en' 
+                ? 'bg-white text-gray-900 shadow-lg' 
+                : 'text-white hover:text-gray-200'
+            }`}
+          >
+            EN
+          </button>
+          <button
+            onClick={() => setLanguage('fr')}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              language === 'fr' 
+                ? 'bg-white text-gray-900 shadow-lg' 
+                : 'text-white hover:text-gray-200'
+            }`}
+          >
+            FR
+          </button>
+        </div>
+      </div>
+
       {/* Modern Engaging Welcome Section */}
       <section 
         className="h-screen flex items-center justify-center relative overflow-hidden"
@@ -113,7 +160,7 @@ export const WelcomePage: React.FC = () => {
               }}
               transition={{ duration: 3, repeat: Infinity }}
             >
-              {siteContent.welcomeTitle}
+              {currentText.welcomeTitle}
             </motion.h1>
             <motion.div 
               className="w-32 h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 mx-auto mb-8 rounded-full"
@@ -122,21 +169,20 @@ export const WelcomePage: React.FC = () => {
               transition={{ duration: 1, delay: 1 }}
             ></motion.div>
             <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed font-medium">
-              {siteContent.welcomeSubtitle}
+              {currentText.welcomeSubtitle}
             </p>
           </motion.div>
           
-          {/* Interactive credentials grid */}
+          {/* Simplified credentials grid */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.9 }}
-            className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10"
+            className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-10"
           >
             {[
-              { label: 'Institution', value: siteContent.personalInfo.university, color: 'from-blue-500 to-blue-600' },
-              { label: 'Program', value: siteContent.personalInfo.course, color: 'from-purple-500 to-purple-600' },
-              { label: 'Language Pairs', value: siteContent.personalInfo.translationPairs, color: 'from-indigo-500 to-indigo-600' }
+              { label: currentText.institution, value: siteContent.personalInfo.university, color: 'from-blue-500 to-blue-600' },
+              { label: currentText.program, value: siteContent.personalInfo.course, color: 'from-purple-500 to-purple-600' }
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -152,29 +198,6 @@ export const WelcomePage: React.FC = () => {
             ))}
           </motion.div>
           
-          {/* Animated language indicators */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.4 }}
-            className="mb-12"
-          >
-            <div className="flex flex-wrap justify-center gap-4">
-              {siteContent.personalInfo.languages.map((language, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 1.6 + index * 0.1 }}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 border border-white/30 hover:bg-white/30 transition-all duration-300"
-                >
-                  <span className="text-white text-sm font-semibold tracking-wide">{language}</span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-          
           {/* Modern scroll indicator */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -182,7 +205,7 @@ export const WelcomePage: React.FC = () => {
             transition={{ duration: 1, delay: 2 }}
             className="flex flex-col items-center space-y-4"
           >
-            <span className="text-gray-300 text-sm font-medium tracking-wider uppercase">Explore Work</span>
+            <span className="text-gray-300 text-sm font-medium tracking-wider uppercase">{currentText.exploreWork}</span>
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 2, repeat: Infinity }}

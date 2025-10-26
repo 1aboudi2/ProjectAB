@@ -1,7 +1,7 @@
 // TODO: Replace with your info
 export const siteContent = {
   // Site metadata
-  siteName: "Translation Portfolio",
+  siteName: "Translation Project",
   welcomeTitle: "Welcome",
   welcomeSubtitle: "Bridging cultures through language and translation",
   
@@ -11,16 +11,13 @@ export const siteContent = {
   // Profile picture
   profileImage: "/profile.jpg", // TODO: Replace with your profile picture
   
-  // Personal info
+  // Personal info (simplified)
   personalInfo: {
     email: "your.email@university.edu", // TODO: Replace with your email
     studentNumber: "12345678", // TODO: Replace with your student number
     university: "Your University Name", // TODO: Replace with your university
     course: "Master's in International Translation", // TODO: Replace with your course
-    specialization: "Multilingual Communication", // TODO: Replace with your specialization
-    advisor: "Dr. [Advisor Name]", // TODO: Replace with your advisor
-    languages: ["English", "French", "Spanish", "Arabic"], // TODO: Replace with your languages
-    translationPairs: "EN↔FR, EN↔ES, EN↔AR" // TODO: Replace with your language pairs
+    advisor: "Dr. [Advisor Name]" // TODO: Replace with your advisor
   },
   
   // Translation Articles/Projects
