@@ -1,100 +1,59 @@
 // TODO: Replace with your info
 export const siteContent = {
   // Site metadata
-  siteName: "SB Translations",
-  siteTitle: "Translation & Localization Portfolio",
-  siteSubtitle: "Delivering high-quality translation services with precision and cultural sensitivity",
-  contactEmail: "contact@sbtranslations.com", // TODO: Replace with your email
+  siteName: "My Articles",
+  welcomeTitle: "Welcome",
+  welcomeSubtitle: "Discover my thoughts and insights",
   
-  // Profile
-  profileImage: "/profile.svg", // TODO: Replace with your profile image
+  // Background image
+  backgroundImage: "/background.jpg", // TODO: Replace with your background photo
   
-  // About section
-  about: {
-    title: "About Me",
-    description: "Professional translator with over 8 years of experience delivering accurate, culturally-sensitive translations across multiple industries.",
-    highlights: [
-      "Certified translator in 4 languages",
-      "Specialized in technical and marketing content",
-      "Expert in CAT tools and quality assurance",
-      "Native-level fluency in English and French"
-    ]
+  // Profile picture
+  profileImage: "/profile.jpg", // TODO: Replace with your profile picture
+  
+  // Personal info
+  personalInfo: {
+    email: "your.email@university.edu", // TODO: Replace with your email
+    studentNumber: "12345678", // TODO: Replace with your student number
+    university: "Your University Name", // TODO: Replace with your university
+    course: "Your Course Name" // TODO: Replace with your course
   },
   
-  // Services
-  services: [
+  // Articles/Paragraphs
+  articles: [
     {
-      title: "Translation",
-      description: "Accurate, context-aware translations that preserve meaning and tone",
-      icon: "🌐"
+      id: 1,
+      title: "My First Article",
+      content: "This is where you can put your first article content. It will appear as you scroll down the page. You can write about anything you want - your thoughts, experiences, or insights. The text will fade in smoothly as you scroll.",
+      date: "2024-01-15"
     },
     {
-      title: "Localization",
-      description: "Cultural adaptation for global markets and audiences",
-      icon: "🎯"
+      id: 2,
+      title: "Another Article",
+      content: "Here's another article that will reveal as you continue scrolling. You can add as many articles as you want. Each one will have its own title and content. The animations make the reading experience smooth and engaging.",
+      date: "2024-01-20"
     },
     {
-      title: "Subtitling",
-      description: "Professional video subtitles with perfect timing and readability",
-      icon: "🎬"
-    },
-    {
-      title: "Proofreading",
-      description: "Thorough editing and quality assurance for polished content",
-      icon: "✏️"
+      id: 3,
+      title: "More Thoughts",
+      content: "Keep adding your articles here. The scroll-reveal effect makes each paragraph appear naturally as you read. You can write about your experiences, share knowledge, or express your thoughts on various topics.",
+      date: "2024-01-25"
     }
   ],
   
-  // Languages
-  languages: [
-    { code: "EN", name: "English", flag: "🇺🇸" },
-    { code: "FR", name: "French", flag: "🇫🇷" },
-    { code: "AR", name: "Arabic", flag: "🇸🇦" },
-    { code: "NL", name: "Dutch", flag: "🇳🇱" },
-    { code: "ES", name: "Spanish", flag: "🇪🇸" },
-    { code: "DE", name: "German", flag: "🇩🇪" }
-  ],
-  
-  // Sample project data
-  sampleProject: {
-    clientName: "TechCorp Solutions", // TODO: Replace with actual client name
-    domain: "Technology & Software",
-    sourceLanguage: "English",
-    targetLanguage: "French",
-    wordCount: "15,000",
-    tools: ["Trados Studio", "MemoQ", "QA Distiller"],
-    deliveryDate: "2024-01-15",
-    
-    sourceExcerpt: `Welcome to TechCorp Solutions, where innovation meets reliability. Our cutting-edge software platform empowers businesses to streamline their operations and achieve unprecedented growth. With over a decade of experience in the technology sector, we've helped thousands of companies transform their digital infrastructure.`,
-    
-    finalTranslation: `Bienvenue chez TechCorp Solutions, où l'innovation rencontre la fiabilité. Notre plateforme logicielle de pointe permet aux entreprises de rationaliser leurs opérations et d'atteindre une croissance sans précédent. Avec plus d'une décennie d'expérience dans le secteur technologique, nous avons aidé des milliers d'entreprises à transformer leur infrastructure numérique.`,
-    
-    glossary: [
-      { term: "cutting-edge", translation: "de pointe", context: "technology" },
-      { term: "streamline", translation: "rationaliser", context: "operations" },
-      { term: "unprecedented", translation: "sans précédent", context: "growth" },
-      { term: "infrastructure", translation: "infrastructure", context: "digital" }
-    ],
-    
-    styleGuide: [
-      { rule: "Tone", guideline: "Professional yet approachable" },
-      { rule: "Formality", guideline: "Formal business language" },
-      { rule: "Technical terms", guideline: "Use established French equivalents" },
-      { rule: "Brand names", guideline: "Keep original English names" }
-    ],
-    
-    kpis: [
-      { label: "Turnaround Time", value: 3, unit: "days", description: "Average delivery time" },
-      { label: "Quality Score", value: 98, unit: "%", description: "Client satisfaction rating" },
-      { label: "Accuracy Rate", value: 99.5, unit: "%", description: "Translation accuracy" },
-      { label: "Client Retention", value: 95, unit: "%", description: "Repeat client rate" }
-    ]
-  },
-  
-  // Social links
-  socialLinks: [
-    { name: "LinkedIn", url: "#", icon: "💼" },
-    { name: "Twitter", url: "#", icon: "🐦" },
-    { name: "Email", url: "mailto:contact@sbtranslations.com", icon: "✉️" }
+  // Second page content
+  secondPageArticles: [
+    {
+      id: 1,
+      title: "Second Page Article",
+      content: "This is content for the second page. You can organize your articles across different pages. Each page can have its own background image and set of articles.",
+      date: "2024-02-01"
+    },
+    {
+      id: 2,
+      title: "Another Second Page Article",
+      content: "More content for the second page. You can have different themes or topics on each page. The navigation is simple - just click the tab to switch between pages.",
+      date: "2024-02-05"
+    }
   ]
 };
