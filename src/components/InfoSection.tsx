@@ -17,7 +17,7 @@ export const InfoSection: React.FC = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
-          className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-4 sm:p-6 border border-white border-opacity-20"
+          className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-4 sm:p-6 border border-white border-opacity-20 max-w-2xl mx-auto"
         >
           <div className="text-center mb-4">
             <h2 className="text-lg sm:text-xl font-light mb-2 text-white tracking-wide">

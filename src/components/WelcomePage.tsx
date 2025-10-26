@@ -26,7 +26,7 @@ export const WelcomePage: React.FC = () => {
   const currentText = translations[language];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 relative overflow-hidden">
       {/* Language Toggle */}
       <div className="fixed top-4 left-4 z-50">
         <div className="flex bg-white/15 backdrop-blur-md rounded-lg p-1 border border-white/25 shadow-md">
@@ -96,192 +96,203 @@ export const WelcomePage: React.FC = () => {
                 y: [0, -20, 0],
                 rotate: [0, 10, -10, 0],
                 opacity: [0.2, 0.4, 0.2],
-                scale: [1, 1.05, 1],
               }}
               transition={{
-                duration: 8 + i * 2,
+                duration: 4 + i * 0.5,
                 repeat: Infinity,
-                delay: i * 2,
+                delay: i * 0.8,
               }}
             >
               {symbol}
             </motion.div>
           ))}
         </div>
-        
-        {/* Responsive content layout */}
-        <div className="relative z-10 text-center text-white w-full max-w-6xl mx-auto">
-          {/* Responsive Profile Picture */}
+
+        {/* Main Content */}
+        <div className="text-center z-10 max-w-4xl mx-auto">
+          {/* Profile Photo */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="mb-8 sm:mb-10"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mb-8"
           >
             <div className="relative inline-block">
               <motion.img
-                src={siteContent.profileImage}
+                src="/profile.jpg"
                 alt="Profile"
-                className="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full border-3 sm:border-4 border-white/50 shadow-xl object-cover"
+                className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full border-4 border-white/30 shadow-2xl object-cover"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
                 onError={(e) => {
-                  e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYwIiBoZWlnaHQ9IjE2MCIgdmlld0JveD0iMCAwIDE2MCAxNjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjgwIiBjeT0iODAiIHI9IjgwIiBmaWxsPSIjRjNGNEY2Ii8+CjxjaXJjbGUgY3g9IjgwIiBjeT0iNjAiIHI9IjMwIiBmaWxsPSIjOUNBM0FGIi8+CjxwYXRoIGQ9Ik00MCAxMjBDNDAgMTIwIDEyMCAxMjAgMTIwIDEyMFYxNDBIMTIwVjE2MEgwVjE0MEgwVjEyMFoiIGZpbGw9IiM5Q0EzQUYiLz4KPC9zdmc+';
+                  e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzg0IiBoZWlnaHQ9IjM4NCIgdmlld0JveD0iMCAwIDM4NCAzODQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjE5MiIgY3k9IjE5MiIgcj0iMTkyIiBmaWxsPSIjRjNGNEY2Ii8+CjxjaXJjbGUgY3g9IjE5MiIgY3k9IjE0NCIgcj0iNzIiIGZpbGw9IiM5Q0EzQUYiLz4KPHBhdGggZD0iOTYgMjg4Qzk2IDI4OCAyODggMjg4IDI4OCAyODhWMzIwSDI4OFYzODRIOTZWMzIwSDk2VjI4OFoiIGZpbGw9IiM5Q0EzQUYiLz4KPC9zdmc+';
                 }}
               />
-              {/* Responsive status indicator */}
-              <motion.div 
-                className="absolute -bottom-1 -right-1 sm:-bottom-2 sm:-right-2 w-6 h-6 sm:w-8 sm:h-8 bg-white rounded-full border-2 sm:border-3 border-blue-900 flex items-center justify-center shadow-md"
-                animate={{ scale: [1, 1.05, 1] }}
-                transition={{ duration: 2.5, repeat: Infinity }}
+              <motion.div
+                className="absolute -top-2 -right-2 w-8 h-8 bg-white rounded-full border-2 border-blue-900 flex items-center justify-center shadow-lg"
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
               >
-                <span className="text-blue-900 text-xs sm:text-sm font-bold">✓</span>
+                <span className="text-blue-900 text-sm font-bold">✓</span>
               </motion.div>
             </div>
           </motion.div>
-          
-          {/* Responsive title and subtitle */}
+
+          {/* Welcome Title */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light text-white mb-4 tracking-wide"
+            style={{
+              background: 'linear-gradient(135deg, #ffffff 0%, #e0f2fe 50%, #bae6fd 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}
+          >
+            {currentText.welcomeTitle}
+          </motion.h1>
+
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-lg sm:text-xl lg:text-2xl text-blue-100 mb-8 font-light max-w-2xl mx-auto leading-relaxed"
+          >
+            {currentText.welcomeSubtitle}
+          </motion.p>
+
+          {/* Language Pattern */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="mb-8"
+          >
+            <div className="flex justify-center space-x-4">
+              {['🇺🇸', '🇫🇷', '🇪🇸', '🇩🇪'].map((flag, index) => (
+                <motion.div
+                  key={flag}
+                  className="text-2xl sm:text-3xl"
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    delay: index * 0.2,
+                  }}
+                >
+                  {flag}
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Academic Info Cards */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.7 }}
-            className="mb-8 sm:mb-10"
+            transition={{ duration: 0.8, delay: 1.0 }}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-8"
           >
-            <motion.h1 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 tracking-tight"
-              style={{
-                background: 'linear-gradient(135deg, #ffffff, #f0f9ff, #e0f2fe)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
-              }}
-              animate={{
-                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-              }}
-              transition={{ duration: 4, repeat: Infinity }}
-            >
-              {currentText.welcomeTitle}
-            </motion.h1>
-            <motion.div 
-              className="w-20 sm:w-24 md:w-32 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-6 sm:mb-8 rounded-full"
-              initial={{ width: 0 }}
-              animate={{ width: '5rem' }}
-              transition={{ duration: 1.5, delay: 1.2 }}
-            ></motion.div>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed font-light px-4">
-              {currentText.welcomeSubtitle}
-            </p>
+            <div className="bg-white/10 backdrop-blur-lg rounded-xl p-4 border border-white/20">
+              <h3 className="text-sm font-semibold text-white mb-1">{currentText.institution}</h3>
+              <p className="text-blue-200 text-sm">{siteContent.personalInfo.institution}</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-lg rounded-xl p-4 border border-white/20">
+              <h3 className="text-sm font-semibold text-white mb-1">{currentText.program}</h3>
+              <p className="text-blue-200 text-sm">{siteContent.personalInfo.program}</p>
+            </div>
           </motion.div>
-          
-          {/* Responsive credentials grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1 }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto mb-8 sm:mb-12"
-          >
-            {[
-              { label: currentText.institution, value: siteContent.personalInfo.university },
-              { label: currentText.program, value: siteContent.personalInfo.course }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.3 + index * 0.2 }}
-                whileHover={{ scale: 1.02, y: -4 }}
-                className="bg-white/15 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/25"
-              >
-                <h3 className="text-xs sm:text-sm font-bold text-white/90 mb-2 sm:mb-3 tracking-widest uppercase">{item.label}</h3>
-                <p className="text-white text-sm sm:text-base lg:text-lg font-semibold leading-relaxed">{item.value}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-          
-          {/* Responsive scroll indicator */}
+
+          {/* Scroll Down Indicator */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 2 }}
-            className="flex flex-col items-center space-y-3 sm:space-y-4"
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="flex flex-col items-center"
           >
-            <span className="text-blue-200 text-xs sm:text-sm font-semibold tracking-widest uppercase">{currentText.exploreWork}</span>
+            <p className="text-blue-200 text-sm mb-2">{currentText.exploreWork}</p>
             <motion.div
               animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 2.5, repeat: Infinity }}
-              className="w-6 h-10 sm:w-8 sm:h-12 border-2 border-white/60 rounded-full flex justify-center p-1 sm:p-2"
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="text-white text-2xl"
             >
-              <motion.div
-                animate={{ y: [0, 16, 0] }}
-                transition={{ duration: 2.5, repeat: Infinity }}
-                className="w-1 h-2 sm:h-3 bg-white rounded-full"
-              ></motion.div>
+              ↓
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Responsive Articles Section */}
-      <div className="bg-white py-16 sm:py-20 lg:py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12 sm:mb-16 lg:mb-20"
-          >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-blue-900 mb-4 sm:mb-6 tracking-tight">
-              Translation Research
-            </h2>
-            <div className="w-16 sm:w-20 md:w-24 lg:w-32 h-1 sm:h-1.5 md:h-2 bg-gradient-to-r from-blue-600 to-blue-800 mx-auto mb-6 sm:mb-8 rounded-full"></div>
-            <p className="text-blue-700 max-w-3xl mx-auto text-base sm:text-lg lg:text-xl font-medium leading-relaxed px-4">
-              Bridging languages and cultures through professional translation
-            </p>
-          </motion.div>
-          
-          {siteContent.articles.map((article, index) => (
-            <motion.article
-              key={article.id}
-              initial={{ opacity: 0, y: 40 }}
+      {/* Articles Section */}
+      <div className="bg-gradient-to-br from-white via-blue-50 to-blue-100 relative overflow-hidden">
+        <div className="pt-20 pb-20 px-6">
+          <div className="max-w-6xl mx-auto">
+            {/* Header */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.15 }}
+              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="mb-12 sm:mb-16 lg:mb-20 group"
+              className="text-center mb-16"
             >
-              <motion.div
-                whileHover={{ y: -4 }}
-                className="bg-white rounded-xl sm:rounded-2xl lg:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-200 group-hover:border-blue-400"
-              >
-                <div className="flex items-start justify-between mb-6 sm:mb-8">
-                  <div className="flex items-center space-x-3 sm:space-x-4">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg sm:rounded-xl lg:rounded-2xl flex items-center justify-center shadow-lg">
-                      <span className="text-white text-sm sm:text-base lg:text-lg font-bold">{article.id}</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-blue-900 mb-4 tracking-wide">
+                Translation Research
+              </h2>
+              <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-blue-800 mx-auto mb-6 rounded-full"></div>
+              <p className="text-lg sm:text-xl text-blue-700 font-light max-w-2xl mx-auto">
+                Advanced translation studies and multilingual research
+              </p>
+            </motion.div>
+
+            {/* Articles Grid */}
+            <div className="space-y-8">
+              {siteContent.articles.map((article, index) => (
+                <motion.article
+                  key={index}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-2xl shadow-lg border border-blue-100 overflow-hidden hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="p-8 sm:p-10">
+                    <div className="flex items-start justify-between mb-6">
+                      <div className="flex items-center space-x-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center text-white font-bold text-lg">
+                          {index + 1}
+                        </div>
+                        <div>
+                          <h3 className="text-lg sm:text-xl font-semibold text-blue-900 mb-1">
+                            {article.title}
+                          </h3>
+                          <p className="text-sm text-blue-600 font-medium">
+                            {article.languagePair}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="text-sm text-gray-500 font-medium">
+                        {article.date}
+                      </div>
                     </div>
-                    <div className="flex flex-col">
-                      <span className="text-xs sm:text-sm font-bold text-blue-600 uppercase tracking-wider">
-                        {article.category}
-                      </span>
-                      <span className="text-xs sm:text-sm text-blue-500 font-mono">
-                        {article.languages}
-                      </span>
-                    </div>
+                    
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 0.3 }}
+                      viewport={{ once: true }}
+                      className="prose prose-blue max-w-none"
+                    >
+                      <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
+                        {article.content}
+                      </p>
+                    </motion.div>
                   </div>
-                  <span className="text-sm sm:text-base text-blue-600 font-semibold">
-                    {article.date}
-                  </span>
-                </div>
-                
-                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-blue-900 mb-4 sm:mb-6 group-hover:text-blue-700 transition-colors leading-tight">
-                  {article.title}
-                </h3>
-                <p className="text-blue-700 text-base sm:text-lg lg:text-xl leading-relaxed font-medium">
-                  {article.content}
-                </p>
-              </motion.div>
-            </motion.article>
-          ))}
+                </motion.article>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
       

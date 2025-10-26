@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { SimpleNav } from './components/SimpleNav';
 import { WelcomePage } from './components/WelcomePage';
 import { SecondPage } from './components/SecondPage';
-import { InfoSection } from './components/InfoSection';
 
 function App() {
   return (
