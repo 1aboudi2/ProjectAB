@@ -197,11 +197,11 @@ export const WelcomePage: React.FC = () => {
           >
             <div className="bg-white/10 backdrop-blur-lg rounded-xl p-4 border border-white/20">
               <h3 className="text-sm font-semibold text-white mb-1">{currentText.institution}</h3>
-              <p className="text-blue-200 text-sm">{siteContent.personalInfo.institution}</p>
+              <p className="text-blue-200 text-sm">{siteContent.personalInfo.university}</p>
             </div>
             <div className="bg-white/10 backdrop-blur-lg rounded-xl p-4 border border-white/20">
               <h3 className="text-sm font-semibold text-white mb-1">{currentText.program}</h3>
-              <p className="text-blue-200 text-sm">{siteContent.personalInfo.program}</p>
+              <p className="text-blue-200 text-sm">{siteContent.personalInfo.course}</p>
             </div>
           </motion.div>
 
@@ -267,7 +267,7 @@ export const WelcomePage: React.FC = () => {
                             {article.title}
                           </h3>
                           <p className="text-sm text-blue-600 font-medium">
-                            {article.languagePair}
+                            {article.languages}
                           </p>
                         </div>
                       </div>

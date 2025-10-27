@@ -246,7 +246,7 @@ export const ResearchPage: React.FC = () => {
                             {article.title}
                           </h3>
                           <p className="text-sm text-blue-600 font-medium">
-                            {article.languagePair}
+                            {article.languages}
                           </p>
                         </div>
                       </div>
